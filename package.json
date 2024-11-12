@@ -1,10 +1,10 @@
 {
   "name": "itsecurity-app",
   "version": "1.0.0",
-  "dependencies": {
-    "serve": "^14.0.0"
-  },
   "scripts": {
-    "start": "serve -p $PORT Client/dist"
+    "start": "http-server Client/dist -p $PORT --cors"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }

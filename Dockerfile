@@ -16,4 +16,4 @@ RUN npm install -g http-server
 EXPOSE 8000
 
 # Start command
-CMD ["http-server", "Client/dist", "-p", "$PORT", "--proxy", "http://localhost:$PORT?"]
+CMD ["sh", "-c", "http-server Client/dist -p $PORT --cors"]
