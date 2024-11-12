@@ -13,7 +13,7 @@ RUN cd Client && npm run build
 RUN npm install -g serve
 
 # Expose port
-EXPOSE 3000
+EXPOSE 8000
 
 # Start command
-CMD ["npx", "serve", "-s", "Client/dist", "-l", "3000"]
+CMD ["npx", "serve", "-s", "Client/dist", "-l", "8000"]

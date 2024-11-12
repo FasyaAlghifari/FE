@@ -9,4 +9,4 @@ healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "3000"
+PORT = "8000"
