@@ -4,7 +4,7 @@ const AuthLayout = (props) => {
     <div className="w-full min-h-screen flex items-center overflow-hidden bg-blue-950">
       <img
         className="flex justify-center items-center z-0 absolute opacity-50 w-full h-full object-cover"
-        src="/public/images/freepickBlue.jpg"
+        src="/images/freepickBlue.jpg"
         alt="bg"
       />
       <div className="flex w-full justify-center">
@@ -12,7 +12,7 @@ const AuthLayout = (props) => {
           <header>
             <img
               className="mx-auto w-16"
-              src="/public/images/logobjb.png"
+              src="/images/logobjb.png"
               alt="bjb"
             />
             <h1 className="text-2xl font-semibold text-center my-4 text-slate-800">

@@ -9,7 +9,7 @@ export function WelcomePage() {
       <div className="text-center">
         <img
           className="mx-auto mb-8 w-28"
-          src="/public/images/logobjbputih.png"
+          src="/images/logobjbputih.png"
           alt="bjb"
         />
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-slate-100 md:text-4xl lg:text-5xl ">
