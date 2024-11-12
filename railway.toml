@@ -3,8 +3,8 @@ builder = "nixpacks"
 buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
-startCommand = "http-server Client/dist -p $PORT --cors"
+startCommand = "http-server Client/dist -p $PORT -a 0.0.0.0 --cors"
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "8000"
+PORT = "3000"

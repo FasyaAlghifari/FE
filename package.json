@@ -2,7 +2,7 @@
   "name": "itsecurity-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "http-server Client/dist -p $PORT --cors"
+    "start": "http-server Client/dist -p $PORT -a --cors"
   },
   "dependencies": {
     "http-server": "^14.1.1"

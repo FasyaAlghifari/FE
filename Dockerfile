@@ -4,12 +4,16 @@ WORKDIR /app
 
 COPY . .
 
+# Install dependencies dan build
 RUN npm install
 RUN cd Client && npm install
 RUN cd Client && npm run build
+
+# Install http-server
 RUN npm install -g http-server
 
-EXPOSE 8000
+# Expose port
+EXPOSE 3000
 
-# Gunakan shell form untuk memastikan variabel environment terbaca
-CMD /bin/sh -c "http-server Client/dist -p ${PORT:-8000} --cors"
+# Start command dengan host 0.0.0.0
+CMD /bin/sh -c "http-server Client/dist -p ${PORT:-3000} -a 0.0.0.0 --cors"
