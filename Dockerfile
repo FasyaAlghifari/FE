@@ -9,11 +9,11 @@ RUN npm install
 RUN cd Client && npm install
 RUN cd Client && npm run build
 
-# Install serve
-RUN npm install -g serve
+# Install http-server
+RUN npm install -g http-server
 
 # Expose port
 EXPOSE 8000
 
 # Start command
-CMD serve -p $PORT Client/dist
+CMD ["http-server", "Client/dist", "-p", "$PORT", "--proxy", "http://localhost:$PORT?"]
