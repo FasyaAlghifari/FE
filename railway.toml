@@ -4,9 +4,7 @@ buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
 startCommand = "npx serve -s Client/dist -l $PORT"
-healthcheckPath = "/"
-healthcheckTimeout = 60
-restartPolicyType = "ON_FAILURE"
+# Hapus baris healthcheckPath dan healthcheckTimeout
 
 [deploy.envs]
-PORT = "8000"
+PORT = "3000"
