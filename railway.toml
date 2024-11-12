@@ -3,11 +3,10 @@ builder = "nixpacks"
 buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
-startCommand = "./start.sh"
+startCommand = "serve -s Client/dist -l $PORT"
 healthcheckPath = "/"
-healthcheckTimeout = 300
+healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "8000"
-NIXPACKS_NODE_VERSION = "18"
+PORT = "3000"
