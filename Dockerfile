@@ -12,8 +12,12 @@ RUN cd Client && npm run build
 # Install http-server
 RUN npm install -g http-server
 
+# Create entrypoint script
+RUN echo '#!/bin/sh\nPORT="${PORT:-3000}"\necho "Starting server on port $PORT"\nhttp-server Client/dist -p "$PORT" -a 0.0.0.0 --cors' > /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # Expose port
 EXPOSE 3000
 
-# Start command dengan host 0.0.0.0
-CMD /bin/sh -c "http-server Client/dist -p ${PORT:-3000} -a 0.0.0.0 --cors"
+# Use entrypoint script
+ENTRYPOINT ["/entrypoint.sh"]
