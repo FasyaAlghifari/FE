@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
-startCommand = "serve Client/dist --listen $PORT --single"
+startCommand = "serve -p $PORT Client/dist"
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]

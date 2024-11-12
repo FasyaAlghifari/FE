@@ -13,7 +13,7 @@ RUN cd Client && npm run build
 RUN npm install -g serve
 
 # Expose port
-EXPOSE 3000
+EXPOSE 8000
 
 # Start command
-CMD ["sh", "-c", "serve Client/dist --listen $PORT --single"]
+CMD serve -p $PORT Client/dist
