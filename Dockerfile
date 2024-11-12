@@ -16,16 +16,16 @@ WORKDIR /app/Client
 RUN echo '#!/bin/sh\n\
 echo "Starting preview server..."\n\
 echo "Current directory: $(pwd)"\n\
-echo "PORT: ${PORT:-4173}"\n\
-exec npm run preview -- --host 0.0.0.0 --port ${PORT:-4173}' > start.sh
+echo "PORT: ${PORT:-8000}"\n\
+exec npm run preview -- --host 0.0.0.0 --port ${PORT:-8000}' > start.sh
 
 RUN chmod +x start.sh
 
 # Expose port
-EXPOSE 4173
+EXPOSE 8000
 
 # Set environment variable
-ENV PORT=4173
+ENV PORT=8000
 
 # Jalankan preview
 CMD ["./start.sh"]

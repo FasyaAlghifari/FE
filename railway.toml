@@ -9,5 +9,5 @@ healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "4173"
+PORT = "8000"
 NIXPACKS_NODE_VERSION = "18"
