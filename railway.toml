@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run install-client && npm run build-client"
+
+[deploy]
+startCommand = "cd client && npm start"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"
