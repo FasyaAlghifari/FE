@@ -5,6 +5,6 @@
     "serve": "^14.0.0"
   },
   "scripts": {
-    "start": "serve -s Client/dist -l $PORT"
+    "start": "serve Client/dist --listen $PORT --single"
   }
 }

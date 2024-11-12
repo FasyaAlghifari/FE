@@ -3,8 +3,8 @@ builder = "nixpacks"
 buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
-startCommand = "npx serve -s Client/dist -l $PORT"
-# Hapus baris healthcheckPath dan healthcheckTimeout
+startCommand = "serve Client/dist --listen $PORT --single"
+restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "3000"
+PORT = "8000"
