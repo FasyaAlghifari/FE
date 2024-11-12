@@ -7,11 +7,11 @@ COPY . .
 
 # Install dependencies dan build
 RUN npm install
-RUN cd client && npm install
-RUN cd client && npm run build
+RUN cd Client && npm install
+RUN cd Client && npm run build
 
-# Expose port yang digunakan Vite (biasanya 4173 untuk preview)
+# Expose port yang digunakan Vite
 EXPOSE 4173
 
-# Start the application menggunakan preview mode
+# Start the application
 CMD ["npm", "start"]
