@@ -13,5 +13,5 @@ RUN cd Client && npm run build
 # Expose port yang digunakan Vite
 EXPOSE 4173
 
-# Start the application
-CMD ["npm", "start"]
+# Gunakan shell form untuk CMD
+CMD cd Client && npm run preview -- --host 0.0.0.0 --port $PORT

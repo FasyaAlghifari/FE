@@ -6,4 +6,16 @@ export default defineConfig({
   server: {
     port: 8000,
   },
+  build: {
+    chunkSizeWarningLimit: 4000,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      }
+    }
+  }
 });
