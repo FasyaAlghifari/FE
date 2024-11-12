@@ -1,12 +1,10 @@
 [build]
-builder = "nixpacks"
-buildCommand = "npm install && cd Client && npm install && npm run build"
+builder = "docker"
 
 [deploy]
-startCommand = "serve -s Client/dist -l $PORT"
 healthcheckPath = "/"
 healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
 
 [deploy.envs]
-PORT = "3000"
+PORT = "8080"
