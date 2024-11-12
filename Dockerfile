@@ -13,14 +13,19 @@ RUN cd Client && npm run build
 WORKDIR /app/Client
 
 # Buat script untuk menjalankan preview
-RUN echo "#!/bin/sh\necho 'Starting preview server...'\necho 'PORT: '\${PORT:-4173}\nnpm run preview -- --host 0.0.0.0 --port \${PORT:-4173}" > start.sh
+RUN echo '#!/bin/sh\n\
+echo "Starting preview server..."\n\
+echo "Current directory: $(pwd)"\n\
+echo "PORT: ${PORT:-4173}"\n\
+exec npm run preview -- --host 0.0.0.0 --port ${PORT:-4173}' > start.sh
+
 RUN chmod +x start.sh
 
 # Expose port
 EXPOSE 4173
 
-# Gunakan environment variable untuk port
+# Set environment variable
 ENV PORT=4173
 
-# Jalankan script
+# Jalankan preview
 CMD ["./start.sh"]

@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "npm install && cd Client && npm install && npm run build"
 
 [deploy]
-startCommand = "cd Client && ./start.sh"
+startCommand = "./start.sh"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
