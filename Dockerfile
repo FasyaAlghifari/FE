@@ -1,5 +1,4 @@
-# Build stage
-FROM node:18-alpine as builder
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -10,19 +9,11 @@ RUN npm install
 RUN cd Client && npm install
 RUN cd Client && npm run build
 
-# Production stage
-FROM nginx:alpine
-
-# Copy hasil build
-COPY --from=builder /app/Client/dist /usr/share/nginx/html
-
-# Copy nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
+# Install serve
+RUN npm install -g serve
 
 # Expose port
-EXPOSE 80
+EXPOSE 3000
 
-# Template nginx.conf
-CMD /bin/sh -c "envsubst '\$PORT' < /etc/nginx/nginx.conf > /etc/nginx/nginx.conf.tmp && \
-    mv /etc/nginx/nginx.conf.tmp /etc/nginx/nginx.conf && \
-    nginx -g 'daemon off;'"
+# Start command
+CMD ["npx", "serve", "-s", "Client/dist", "-l", "3000"]
