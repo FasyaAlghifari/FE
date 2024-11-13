@@ -43,17 +43,17 @@ import { RequestPage } from "./pages/Services/Request/requestPage";
 import axios from "axios";
 axios.defaults.withCredentials = true; // Izinkan pengiriman cookie
 
-const ProtectedRoute = ({ children, requiredRole }) => {
-  const { token, userDetails } = useToken(); // Ambil token dan userDetails dari context
+const ProtectedRoute = ({ children }) => {
+  const { token, userDetails } = useToken();
+  
+  console.log("Protected Route - Token:", token);
+  console.log("Protected Route - User Details:", userDetails);
 
   if (!token) {
-    // Redirect ke halaman login jika tidak ada token
+    console.log("Redirecting to login - no token");
     return <Navigate to="/login" />;
   }
 
-  if (requiredRole && userDetails.role !== requiredRole) {
-    return <Navigate to="/unauthorized" />;
-  }
   return children;
 };
 

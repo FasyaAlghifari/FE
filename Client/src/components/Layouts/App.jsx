@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { Badge, Label } from "flowbite-react";
 import { MdOutlineDashboard } from "react-icons/md";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
@@ -30,6 +31,16 @@ const App = ({ services, children }) => {
     TimelineWallpaperDesktop: [],
     BookingRapat: [],
   });
+
+  const App = () => {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <Outlet />
+        </div>
+      </div>
+    );
+  };
 
   const [filter, setFilter] = useState({
     JadwalCuti: false,
