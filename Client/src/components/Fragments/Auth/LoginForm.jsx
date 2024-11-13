@@ -16,7 +16,7 @@ export function LoginForm() {
         email,
         password,
       });
-      window.location.href = "/dashboard";
+      window.location.href = "dashboard";
     } catch (error) {
       Swal.fire({
         icon: "error",
