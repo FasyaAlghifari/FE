@@ -12,7 +12,7 @@ export function LoginForm() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
         email,
         password,
       });
