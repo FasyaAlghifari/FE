@@ -4,6 +4,7 @@ import { useToken } from "../../context/TokenContext";
 import AuthLayout from "../../components/Layouts/AuthLayout";
 
 export const LoginPage = () => {
+  console.log("API URL:", import.meta.env.VITE_API_URL);
   const { token } = useToken();
   if (token) return <Navigate to="/dashboard" />;
   return (

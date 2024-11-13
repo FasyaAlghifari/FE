@@ -12,7 +12,7 @@ export function LoginForm() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("API URL:", import.meta.env.VITE_API_URL);
+    console.log("API URL:", import.meta.env.VITE_API_URL); // Debugging log
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
         email,
@@ -26,6 +26,7 @@ export function LoginForm() {
       });
     }
   };
+  
 
   return (
     <form onSubmit={handleLogin} className="mx-auto">
