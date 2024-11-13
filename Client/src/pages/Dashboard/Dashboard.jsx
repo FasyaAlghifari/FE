@@ -21,9 +21,14 @@ import { useToken } from "../../context/TokenContext";
 
 const useFetchData = (fetchFunction) => {
   const [data, setData] = useState([]);
+  const { token } = useToken();
+
   useEffect(() => {
-    fetchFunction(setData);
-  }, [fetchFunction]);
+    if (token) {
+      fetchFunction(setData);
+    }
+  }, [fetchFunction, token]);
+  
   return data;
 };
 
