@@ -24,7 +24,7 @@ export function LoginForm() {
       });
     }
   };
-
+  console.log(import.meta.env.VITE_API_URL)
   return (
     <form onSubmit={handleLogin} className="mx-auto">
       <div className="relative z-0 w-full mb-5 group">
