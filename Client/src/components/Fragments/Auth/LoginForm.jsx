@@ -8,11 +8,9 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [errors, setErrors] = useState({});
-  console.log("API URL:", import.meta.env.VITE_API_URL);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("API URL:", import.meta.env.VITE_API_URL); // Debugging log
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}`, {
         email,
