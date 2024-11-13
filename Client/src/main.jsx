@@ -42,7 +42,6 @@ import { ArsipPage } from "./pages/Services/DataInformasi/ArsipPage";
 import { RequestPage } from "./pages/Services/Request/requestPage";
 import axios from "axios";
 axios.defaults.withCredentials = true; // Izinkan pengiriman cookie
-axios.defaults.baseURL = 'https://fe-production-a15e.up.railway.app'; // Sesuaikan dengan URL production
 
 const ProtectedRoute = ({ children, requiredRole }) => {
   const { token, userDetails } = useToken(); // Ambil token dan userDetails dari context
