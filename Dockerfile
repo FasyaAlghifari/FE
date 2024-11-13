@@ -9,8 +9,10 @@ RUN npm install
 RUN cd Client && npm install
 RUN cd Client && npm run build
 
-# Copy folder public ke dist
+# Copy folder public dan src ke dist dengan struktur yang benar
 RUN cp -r Client/public/* Client/dist/
+RUN mkdir -p Client/dist/src
+RUN cp -r Client/src/* Client/dist/src/
 
 # Install http-server
 RUN npm install -g http-server
