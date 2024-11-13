@@ -83,18 +83,18 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute>
+      // <ProtectedRoute>
         <DashboardPage />
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
   // Dokumen
   {
     path: "/memo",
     element: (
-      <ProtectedRoute>
+      // <ProtectedRoute>
         <MemoPage />
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
   {
