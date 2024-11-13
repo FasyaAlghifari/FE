@@ -87,6 +87,7 @@ const router = createBrowserRouter([
         <DashboardPage />
       </ProtectedRoute>
     ),
+    errorElement: <ErrorPage />,
   },
   // Dokumen
   {
