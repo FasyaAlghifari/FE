@@ -5,7 +5,6 @@ import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
-  BrowserRouter
 } from "react-router-dom";
 // Auth
 import { TokenProvider, useToken } from "./context/TokenContext";
@@ -42,11 +41,10 @@ import { ArsipPage } from "./pages/Services/DataInformasi/ArsipPage";
 //request
 import { RequestPage } from "./pages/Services/Request/requestPage";
 import axios from "axios";
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true; // Izinkan pengiriman cookie
 
 const ProtectedRoute = ({ children, requiredRole }) => {
   const { token, userDetails } = useToken(); // Ambil token dan userDetails dari context
-  console.log("Current Path:", window.location.pathname);
 
   if (!token) {
     // Redirect ke halaman login jika tidak ada token
@@ -241,10 +239,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <TokenProvider>
-        <RouterProvider router={router} />
-      </TokenProvider>
-    </BrowserRouter>
+    <TokenProvider>
+      <RouterProvider router={router} />
+    </TokenProvider>
   </React.StrictMode>
 );
