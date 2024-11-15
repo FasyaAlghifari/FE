@@ -20,6 +20,7 @@ import { getArsip } from "../../../API/DataInformasi/Arsip.service";
 import { useToken } from "../../context/TokenContext";
 
 const useFetchData = (fetchFunction) => {
+  console.log("Token:", token);
   const [data, setData] = useState([]);
   useEffect(() => {
     fetchFunction(setData);
@@ -28,6 +29,7 @@ const useFetchData = (fetchFunction) => {
 };
 
 export const DashboardPage = () => {
+  console.log("Token:", token);
   const { token } = useToken(); // Ambil token dari context
 
   const SuratKeluar = useFetchData(getSuratKeluars);
