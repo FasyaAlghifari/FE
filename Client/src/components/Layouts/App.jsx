@@ -23,6 +23,7 @@ import Sidebar, { SidebarItem, SidebarCollapse } from "../Elements/Sidebar";
 
 const App = ({ services, children }) => {
   const { token, userDetails } = useToken(); // Ambil token dari context
+  console.log("Current Path:", window.location.pathname);
   const [notification, setNotification] = useState({
     JadwalCuti: [],
     JadwalRapat: [],

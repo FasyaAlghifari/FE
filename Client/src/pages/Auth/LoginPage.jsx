@@ -5,8 +5,8 @@ import AuthLayout from "../../components/Layouts/AuthLayout";
 
 export const LoginPage = () => {
   console.log("Token:", token);
-  console.log("Current Path:", window.location.pathname);
   const { token } = useToken();
+  console.log("Current Path:", window.location.pathname);
   if (token) return <Navigate to="/dashboard" />;
   return (
     <AuthLayout header="Aplikasi Divisi ITS">

@@ -45,6 +45,7 @@ axios.defaults.withCredentials = true; // Izinkan pengiriman cookie
 
 const ProtectedRoute = ({ children, requiredRole }) => {
   const { token, userDetails } = useToken(); // Ambil token dan userDetails dari context
+  console.log("Current Path:", window.location.pathname);
 
   if (!token) {
     // Redirect ke halaman login jika tidak ada token
