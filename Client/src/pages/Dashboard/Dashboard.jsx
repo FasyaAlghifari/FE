@@ -31,7 +31,6 @@ const useFetchData = (fetchFunction) => {
 
 export const DashboardPage = () => {
   const { token } = useToken();
-  console.log("Token:", token);
 
   const SuratKeluar = useFetchData(getSuratKeluars);
   const SuratMasuk = useFetchData(getSuratMasuks);
