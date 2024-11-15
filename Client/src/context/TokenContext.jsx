@@ -10,7 +10,6 @@ export const TokenProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState({});
 
   useEffect(() => {
-    console.log("Token:", token);
     if (token) {
       const decoded = jwtDecode(token);
       setUserDetails({
