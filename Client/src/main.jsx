@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
+  HashRouter,
 } from "react-router-dom";
 // Auth
 import { TokenProvider, useToken } from "./context/TokenContext";
@@ -240,8 +241,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <TokenProvider>
-      <RouterProvider router={router} />
-    </TokenProvider>
+    <HashRouter>
+      <TokenProvider>
+        <RouterProvider router={router} />
+      </TokenProvider>
+    </HashRouter>
   </React.StrictMode>
 );

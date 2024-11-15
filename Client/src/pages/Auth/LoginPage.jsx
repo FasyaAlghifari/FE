@@ -4,8 +4,8 @@ import { useToken } from "../../context/TokenContext";
 import AuthLayout from "../../components/Layouts/AuthLayout";
 
 export const LoginPage = () => {
-  console.log("Token:", token);
   const { token } = useToken();
+  console.log("Token:", token);
   console.log("Current Path:", window.location.pathname);
   if (token) return <Navigate to="/dashboard" />;
   return (
