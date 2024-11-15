@@ -14,6 +14,9 @@ RUN npm install
 COPY Client ./
 RUN npm run build
 
+# VerifiKasi folder /dist
+RUN ls -la /app/Client/dist || (echo "Folder dist tida ditemukan"! && exit 1)
+
 # Pindah ke folder /app dan install http-server secara global
 WORKDIR /app
 RUN npm install -g http-server
